@@ -12,7 +12,8 @@ pip install TFLsTool
 
 ## Example
 Enter the TFL path, extraction requirements, delimiter, document language, and output path, then run the program.
-### Use in python
+### extract_shell_to_tracker()
+#### Use in python
 ```python
 from TFLsTool import extract_shell_to_tracker
 
@@ -32,7 +33,7 @@ extract_shell_to_tracker(
     output_path='./tracker_results.xlsx'
 )
 ```
-### Use in SAS Viya
+#### Use in SAS Viya
 ```SAS
 proc python;
 submit;
