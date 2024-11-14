@@ -81,6 +81,32 @@ completeness_report(
     outpath='./output'
 )
 ```
+#### Use in SAS Viya
+```SAS
+proc python;
+submit;
+
+from TFLsTool import completeness_report
+completeness_report(
+    file_path='./tracker.xlsx',
+    sheet_name='sheet',
+    ds_select_list=['Type', 'SP', 'Pstatus', 'QC', 'Qstatus'],
+    ds_status_list=['Ready', 'Complete'],
+    project='Name of the project',
+    side='all',
+
+    email_sender = [
+        'iamthesender@outlook.com',
+        'thisispassword'
+        ],
+    email_recipient = ['12345678@outlook.com', '5211314@outlook.com'],
+    email_cc = ['12345678@outlook.com', 'james@outlook.com'], 
+    outpath='./output'
+)
+
+endsubmit;
+run;
+```
 
 **Read this in other languages: [English](README.md), [中文](README_zh.md).**
 
