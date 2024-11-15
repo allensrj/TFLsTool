@@ -108,7 +108,7 @@ endsubmit;
 run;
 ```
 
-**More information:https://tflstool.readthedocs.io/zh-cn/latest/**
+**More information: https://tflstool.readthedocs.io/zh-cn/latest/**
 
 **Read this in other languages: [English](README.md), [中文](README_zh.md).**
 
