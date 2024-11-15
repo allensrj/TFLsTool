@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFLsTool &mdash; TFLsTool v1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5a3fd9cb"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="用法解释-extract_shell_to_tracker" href="extract_shell_to_tracker.html" />
+    <link rel="prev" title="Welcome to TFLsTool’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TFLsTool
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TFLsTool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">主要功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">示例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extract-shell-to-tracker">extract_shell_to_tracker()</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#python">在python解释器里这样用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sas-viya">在SAS Viya平台这样用</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#completeness-report">completeness_report()</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">在python解释器里这样用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">在SAS Viya平台这样用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extract_shell_to_tracker.html">用法解释-extract_shell_to_tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="completeness_report.html">用法解释-completeness_report</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TFLsTool</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TFLsTool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/TFLsTool.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tflstool">
+<h1>TFLsTool<a class="headerlink" href="#tflstool" title="Link to this heading"></a></h1>
+<p>这是一个用于制药临床生物统计领域的 TFL（表格、图形和列表）生成的工具包。</p>
+<section id="id1">
+<h2>主要功能<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">extract_shell_to_tracker()</span></code> 功能用于从DOCX格式的shell模板中提取表格类型、表格编号、标题和脚注等信息，记录到一个tracker中，从而帮助统计程序员生成TFL（表格、图形和列表）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">completeness_report()</span></code>  功能用于从tracker.xlsx里提取P侧和Q侧的完成状态，并且根据状态作图发邮件。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>示例<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="extract-shell-to-tracker">
+<h3>extract_shell_to_tracker()<a class="headerlink" href="#extract-shell-to-tracker" title="Link to this heading"></a></h3>
+<section id="python">
+<h4>在python解释器里这样用<a class="headerlink" href="#python" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">TFLsTool</span> <span class="kn">import</span> <span class="n">extract_shell_to_tracker</span>
+
+<span class="n">extract_shell_to_tracker</span><span class="p">(</span><span class="n">table_path</span><span class="o">=</span><span class="s1">&#39;./project-table.docx&#39;</span><span class="p">,</span>
+<span class="n">table_conditions_list</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;Table&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d&#39;</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">]],</span>
+
+<span class="n">listing_path</span><span class="o">=</span><span class="s1">&#39;./project-listings.docx&#39;</span><span class="p">,</span>
+<span class="n">listing_conditions_list</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;Listing&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d&#39;</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">]],</span>
+
+<span class="n">figure_path</span><span class="o">=</span><span class="s1">&#39;./project-figures.docx&#39;</span><span class="p">,</span>
+<span class="n">figure_conditions_list</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;Figures&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d&#39;</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">]],</span>
+
+<span class="n">title_split</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="n">language</span><span class="o">=</span><span class="s1">&#39;EN&#39;</span><span class="p">,</span>
+<span class="n">output_path</span><span class="o">=</span><span class="s1">&#39;./tracker_results.xlsx&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="sas-viya">
+<h4>在SAS Viya平台这样用<a class="headerlink" href="#sas-viya" title="Link to this heading"></a></h4>
+<div class="highlight-SAS notranslate"><div class="highlight"><pre><span></span><span class="kr">proc python;</span>
+submit;
+
+<span class="k">from</span> TFLsTool import extract_shell_to_tracker
+extract_shell_to_tracker(
+    table_path=<span class="s">&#39;./project-table.docx&#39;</span>,
+    table_conditions_list=[[<span class="s">&quot;Table&quot;</span>, re<span class="m">.</span>compile(r<span class="s">&#39;\d&#39;</span>), <span class="s">&#39;.&#39;</span>]],
+    
+    listing_path=<span class="s">&#39;./project-listings.docx&#39;</span>,
+    listing_conditions_list=[[<span class="s">&quot;Listing&quot;</span>, re<span class="m">.</span>compile(r<span class="s">&#39;\d&#39;</span>), <span class="s">&#39;.&#39;</span>]],
+    
+    figure_path=<span class="s">&#39;./project-figures.docx&#39;</span>,
+    figure_conditions_list=[[<span class="s">&quot;Figures&quot;</span>, re<span class="m">.</span>compile(r<span class="s">&#39;\d&#39;</span>), <span class="s">&#39;.&#39;</span>]],
+
+    title_split=<span class="s">&#39;\n&#39;</span>,
+    language=<span class="s">&#39;EN&#39;</span>,
+    output_path=<span class="s">&#39;./tracker_results.xlsx&#39;</span>
+)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="completeness-report">
+<h3>completeness_report()<a class="headerlink" href="#completeness-report" title="Link to this heading"></a></h3>
+<section id="id3">
+<h4>在python解释器里这样用<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">TFLsTool</span> <span class="kn">import</span> <span class="n">completeness_report</span>
+
+<span class="n">completeness_report</span><span class="p">(</span>
+    <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;./tracker.xlsx&#39;</span><span class="p">,</span>
+    <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;sheet&#39;</span><span class="p">,</span>
+    <span class="n">ds_select_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;SP&#39;</span><span class="p">,</span> <span class="s1">&#39;Pstatus&#39;</span><span class="p">,</span> <span class="s1">&#39;QC&#39;</span><span class="p">,</span> <span class="s1">&#39;Qstatus&#39;</span><span class="p">],</span>
+    <span class="n">ds_status_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Ready&#39;</span><span class="p">,</span> <span class="s1">&#39;Complete&#39;</span><span class="p">],</span>
+    <span class="n">project</span><span class="o">=</span><span class="s1">&#39;Name of the project&#39;</span><span class="p">,</span>
+    <span class="n">side</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
+
+    <span class="n">email_sender</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;iamthesender@outlook.com&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;thisispassword&#39;</span>
+        <span class="p">],</span>
+    <span class="n">email_recipient</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;12345678@outlook.com&#39;</span><span class="p">,</span> <span class="s1">&#39;5211314@outlook.com&#39;</span><span class="p">],</span>
+    <span class="n">email_cc</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;12345678@outlook.com&#39;</span><span class="p">,</span> <span class="s1">&#39;james@outlook.com&#39;</span><span class="p">],</span> 
+    <span class="n">outpath</span><span class="o">=</span><span class="s1">&#39;./output&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h4>在SAS Viya平台这样用<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<div class="highlight-SAS notranslate"><div class="highlight"><pre><span></span><span class="kr">proc python;</span>
+submit;
+
+<span class="k">from</span> TFLsTool import completeness_report
+completeness_report(
+    file_path=<span class="s">&#39;./tracker.xlsx&#39;</span>,
+    sheet_name=<span class="s">&#39;sheet&#39;</span>,
+    ds_select_list=[<span class="s">&#39;Type&#39;</span>, <span class="s">&#39;SP&#39;</span>, <span class="s">&#39;Pstatus&#39;</span>, <span class="s">&#39;QC&#39;</span>, <span class="s">&#39;Qstatus&#39;</span>],
+    ds_status_list=[<span class="s">&#39;Ready&#39;</span>, <span class="s">&#39;Complete&#39;</span>],
+    project=<span class="s">&#39;Name of the project&#39;</span>,
+    side=<span class="s">&#39;all&#39;</span>,
+
+    email_sender = [
+        <span class="s">&#39;iamthesender@outlook.com&#39;</span>,
+        <span class="s">&#39;thisispassword&#39;</span>
+        ],
+    email_recipient = [<span class="s">&#39;12345678@outlook.com&#39;</span>, <span class="s">&#39;5211314@outlook.com&#39;</span>],
+    email_cc = [<span class="s">&#39;12345678@outlook.com&#39;</span>, <span class="s">&#39;james@outlook.com&#39;</span>], 
+    outpath=<span class="s">&#39;./output&#39;</span>
+)
+
+endsubmit<span class="kr">;</span>
+<span class="kr">run;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to TFLsTool’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="extract_shell_to_tracker.html" class="btn btn-neutral float-right" title="用法解释-extract_shell_to_tracker" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, allensrj。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
