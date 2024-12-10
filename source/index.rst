@@ -13,6 +13,7 @@ Welcome to TFLsTool's documentation!
    TFLsTool.md
    extract_shell_to_tracker.md
    completeness_report.md
+   combine_rtf.md
 
 
 Indices and tables

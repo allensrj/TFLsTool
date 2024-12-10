@@ -5,103 +5,22 @@
 ## 主要功能
 * `extract_shell_to_tracker()` 功能用于从DOCX格式的shell模板中提取表格类型、表格编号、标题和脚注等信息，记录到一个tracker中，从而帮助统计程序员生成TFL（表格、图形和列表）。
 * `completeness_report()`  功能用于从tracker.xlsx里提取P侧和Q侧的完成状态，并且根据状态作图发邮件。
+* `combine_rtf()` 功能用于按照指定顺序合并RTF文档到一个RTF文件中。
 
-## 示例
-
-### extract_shell_to_tracker()
-
-#### 在python解释器里这样用
+## 安装
 
 ```python
-from TFLsTool import extract_shell_to_tracker
-
-extract_shell_to_tracker(table_path='./project-table.docx',
-table_conditions_list=[["Table", re.compile(r'\d'), '.']],
-
-listing_path='./project-listings.docx',
-listing_conditions_list=[["Listing", re.compile(r'\d'), '.']],
-
-figure_path='./project-figures.docx',
-figure_conditions_list=[["Figures", re.compile(r'\d'), '.']],
-
-title_split='\n',
-language='EN',
-output_path='./tracker_results.xlsx'
-)
-```
-#### 在SAS Viya平台这样用
-
-```SAS
-proc python;
-submit;
-
-from TFLsTool import extract_shell_to_tracker
-extract_shell_to_tracker(
-    table_path='./project-table.docx',
-    table_conditions_list=[["Table", re.compile(r'\d'), '.']],
-    
-    listing_path='./project-listings.docx',
-    listing_conditions_list=[["Listing", re.compile(r'\d'), '.']],
-    
-    figure_path='./project-figures.docx',
-    figure_conditions_list=[["Figures", re.compile(r'\d'), '.']],
-
-    title_split='\n',
-    language='EN',
-    output_path='./tracker_results.xlsx'
-)
+pip install TFLsTool
 ```
 
-### completeness_report()
+你可以在python解释器或SAS Viya平台中使用这个库。
 
-#### 在python解释器里这样用
+## 更新日志
+### Date 2024/12/10
+#### Added
+* 添加了 `combine_rtf()` 功能。
 
-```python
-from TFLsTool import completeness_report
-
-completeness_report(
-    file_path='./tracker.xlsx',
-    sheet_name='sheet',
-    ds_select_list=['Type', 'SP', 'Pstatus', 'QC', 'Qstatus'],
-    ds_status_list=['Ready', 'Complete'],
-    project='Name of the project',
-    side='all',
-
-    email_sender = [
-        'iamthesender@outlook.com',
-        'thisispassword'
-        ],
-    email_recipient = ['12345678@outlook.com', '5211314@outlook.com'],
-    email_cc = ['12345678@outlook.com', 'james@outlook.com'], 
-    outpath='./output'
-)
-```
-#### 在SAS Viya平台这样用
-
-```SAS
-proc python;
-submit;
-
-from TFLsTool import completeness_report
-completeness_report(
-    file_path='./tracker.xlsx',
-    sheet_name='sheet',
-    ds_select_list=['Type', 'SP', 'Pstatus', 'QC', 'Qstatus'],
-    ds_status_list=['Ready', 'Complete'],
-    project='Name of the project',
-    side='all',
-
-    email_sender = [
-        'iamthesender@outlook.com',
-        'thisispassword'
-        ],
-    email_recipient = ['12345678@outlook.com', '5211314@outlook.com'],
-    email_cc = ['12345678@outlook.com', 'james@outlook.com'], 
-    outpath='./output'
-)
-
-endsubmit;
-run;
-```
 
 **其他语言版本: [English](README.md), [中文](README_zh.md).**
+
+文档： https://tflstool.readthedocs.io/zh-cn/latest/
