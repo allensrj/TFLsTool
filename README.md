@@ -12,13 +12,15 @@ This is a toolkit related to TFL (Tables, Figures, and Listings) generation in t
 pip install TFLsTool
 ```
 
-Then you can use in python interpreter or SAS Viya platform.
-
-# Change Log
-## Date 2024/12/10
-### Added
+## Change Log
+### Date 2024/12/15
+#### Added
+* `combine_rtf()`, if addtoc='Y' and no tocfile provided, then generate a table of contents based on the merged RTF files.
+### Date 2024/12/10
+#### Added
 * Introduced the `combine_rtf()` feature, enabling the merging of specified RTF documents in a defined order into a single RTF file.
 
+# More information
 
 
 **Read this in other languages: [English](README.md), [中文](README_zh.md).**

@@ -16,10 +16,14 @@ pip install TFLsTool
 你可以在python解释器或SAS Viya平台中使用这个库。
 
 ## 更新日志
+### Date 2024/12/15
+#### Added
+* `combine_rtf()`, 如果 addtoc='Y' 并且没有提供 tocfile，则根据合并的RTF文件生成目录。
 ### Date 2024/12/10
 #### Added
 * 添加了 `combine_rtf()` 功能。
 
+# More information
 
 **其他语言版本: [English](README.md), [中文](README_zh.md).**
 
